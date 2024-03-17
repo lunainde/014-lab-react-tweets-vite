@@ -1,26 +1,24 @@
-function Tweet() {
+import React from 'react'
+
+function Tweet(props) {
   return (
     <div className="tweet">
-      <img
-        src="https://education-team-2020.s3.eu-west-1.amazonaws.com/web-dev/ih_logo.jpeg"
+    <img
+        src={props.tweet.user.image}
         className="profile"
         alt="profile"
       />
-
       <div className="body">
         <div className="top">
           <span className="user">
-            <span className="name">Ironhack</span>
-            <span className="handle">@ironhack</span>
+            <span className="name">{props.tweet.user.name}</span>
+            <span className="handle">{props.tweet.user.handle}</span>
           </span>
 
-          <span className="timestamp">Nov 30, 2020</span>
+          <span className="timestamp">{props.tweet.timestamp}</span>
         </div>
 
-        <p className="message">
-          On December 7th, we will be hosting a #webinar that will introduce you
-          to #SQL! Are you ready? 🚀
-        </p>
+        <p className="message">{props.tweet.message}</p>
 
         <div className="actions">
           {/* Font Awesome icons */}
@@ -32,8 +30,9 @@ function Tweet() {
       </div>
 
       <i className="fas fa-ellipsis-h"></i>
+    
     </div>
-  );
+  )
 }
 
 export default Tweet;
