@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
-function ProfileImage() {
-  return (
-    <div>ProfileImage</div>
-  )
-}
+const ProfileImage = ({image}) => {
+  return <img src={image} className="profile" alt="profile" />;
+};
 
-export default ProfileImage
+export default ProfileImage;

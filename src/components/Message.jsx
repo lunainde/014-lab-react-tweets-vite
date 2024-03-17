@@ -1,8 +1,8 @@
 import React from 'react'
 
-function Message() {
+const Message = ({message}) => {
   return (
-    <div>Message</div>
+    <p className="message">{message}</p>
   )
 }
 

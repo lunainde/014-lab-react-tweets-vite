@@ -1,24 +1,31 @@
-import React from 'react'
+import React from "react";
+import ProfileImage from "./ProfileImage";
+import User from "./User";
+import Timestamp from "./Timestamp";
+import Message from "./Message";
 
-function Tweet(props) {
+//function Tweet(props)
+const Tweet = ({ tweet }) => {
   return (
     <div className="tweet">
-    <img
+      <ProfileImage image={tweet.user.image} />
+      {/* <img
         src={props.tweet.user.image}
         className="profile"
         alt="profile"
-      />
+      /> */}
       <div className="body">
         <div className="top">
-          <span className="user">
+          <User name={tweet.user.name} handle={tweet.user.handle} />
+          {/* <span className="user">
             <span className="name">{props.tweet.user.name}</span>
-            <span className="handle">{props.tweet.user.handle}</span>
-          </span>
-
-          <span className="timestamp">{props.tweet.timestamp}</span>
+            <span className="handle">@{props.tweet.user.handle}</span>
+          </span> */}
+          <Timestamp timestamp={tweet.timestamp} />
+          {/* <span className="timestamp">{tweet.timestamp}</span> */}
         </div>
-
-        <p className="message">{props.tweet.message}</p>
+          <Message message={tweet.message}/>
+        {/* <p className="message">{tweet.message}</p> */}
 
         <div className="actions">
           {/* Font Awesome icons */}
@@ -30,9 +37,8 @@ function Tweet(props) {
       </div>
 
       <i className="fas fa-ellipsis-h"></i>
-    
     </div>
-  )
-}
+  );
+};
 
 export default Tweet;

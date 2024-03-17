@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Timestamp() {
+const Timestamp = ({timestamp}) => {
   return (
-    <div>Timestamp</div>
-  )
-}
+    <span className="timestamp">{timestamp}</span>
+  );
+};
 
-export default Timestamp
+export default Timestamp;
